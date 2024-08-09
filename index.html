@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUB de Viagem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        body.dark-mode .container {
+            background-color: #333;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            width: 150px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .card:hover {
+            background-color: #d0d0d0;
+        }
+        body.dark-mode .card {
+            background-color: #555;
+        }
+        body.dark-mode .card:hover {
+            background-color: #444;
+        }
+        .card a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;
+        }
+        .dark-mode-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode .dark-mode-toggle {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HUB de Viagem</h1>
+        <div class="grid">
+            <div class="card">
+                <a href="mapas.html">Mapas</a>
+            </div>
+            <div class="card">
+                <a href="planos.html">Planos Diários</a>
+            </div>
+            <div class="card">
+                <a href="informacoes.html">Informações</a>
+            </div>
+            <div class="card">
+                <a href="entretenimento.html">Entretenimento</a>
+            </div>
+        </div>
+    </div>
+
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const toggleButton = document.querySelector('.dark-mode-toggle');
+            toggleButton.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+    </script>
+</body>
+</html>
