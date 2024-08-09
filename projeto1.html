@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArmindoBot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background: #0d0d0d;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        header {
+            background: #0b0b0b;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            position: relative;
+            z-index: 10;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 500;
+            color: #00ffcc;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+        }
+
+        .project-details {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .project-details img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-details h2 {
+            font-size: 2.5em;
+            color: #00ffcc;
+            margin-bottom: 20px;
+            text-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+        }
+
+        .project-details p {
+            font-size: 1.2em;
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-details a {
+            display: inline-block;
+            font-size: 1.2em;
+            color: #00ffcc;
+            text-decoration: none;
+            border: 1px solid #00ffcc;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .project-details a:hover {
+            background: #00ffcc;
+            color: #000;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 1.2em;
+            color: #00ffcc;
+            text-decoration: none;
+            border: 1px solid #00ffcc;
+            padding: 10px 20px;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.6); /* Background to blend with the design */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+            z-index: 20;
+        }
+
+        .back-button:hover {
+            background: #00ffcc;
+            color: #000;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
+        }
+
+        footer {
+            background: #0b0b0b;
+            color: #666;
+            text-align: center;
+            padding: 15px 0;
+            border-top: 1px solid #333;
+            position: relative;
+            z-index: 10;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ArmindoBot</h1>
+    </header>
+
+    <section class="project-details">
+        <img src="armindologo.png" alt="Projeto Exemplo">
+        <h2>ArmindoBot</h2>
+        <p>
+            O ArmindoBot é a versão OpenSource do Armindo, um assistente irritante, que manda de vez em quando em um canal pré-definido mensagens como:
+<br>
+            "Olá mortais"<br>
+            "Acima de mim, só eu mesmo"<br>
+            "Não gosto de bagels"<br>
+            "Juro que de mim ninguem te tira, valiosa como pedra de safira"<br>
+            "Bora jogar mario kart o meu nick na switch é mrArmindo123"<br>
+            O ArmindoBot também tem outras funções uteis em servidores de amigos pequenos como:<br>
+            
+            Processar: Com o comando "/processar {Usuario} {Tempo de Time Out}", o ArmindoBot vai criar uma enquete que se for aceite vai por o Usuario em Time Out
+            <br>  Roleta de Jogos: Com o comando "/addgame {Nome de um Jogo}" ele vai adicionar á roleta o nome do jogo e com o comando "/roleta", o Armindo vai pegar em todos os valores colocados com o /addgame e vai sortear um.
+            <br>   O ArmindoBot também tem algumas mensagens de RPC engraçadas.
+            <br>
+            <br>  Deves também deves mudar a ultima linha de forma a que fique a token do teu bot
+            <br>
+            <br>  ⚠️Aviso!⚠️ Ao usar o ArmindoBot estás sobre tua responsabilidade, eu não me responsabiliso por qualquer erro que possa danificar algo, também não me responsabiliso pelas mensagens colocadas no ArmindoBot.
+        </p>
+       
+        <a href="https://github.com/Rarafaza5/ArmindoBot" target="_blank">Ver no GitHub</a>
+    </section>
+
+    <a href="index.html" class="back-button">Voltar ao Início</a>
+
+    <footer>
+        <p>&copy; 2024 Portfólio. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
