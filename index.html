@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,24 +28,43 @@
             z-index: 10;
             border-bottom: 1px solid #333;
             overflow: hidden;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
         }
 
         header h1 {
             margin: 0;
-            font-size: 3em;
+            font-size: 2em;
             font-weight: 500;
             color: #00ffcc;
             letter-spacing: 2px;
             text-transform: uppercase;
-            opacity: 0;
-            transform: translateY(-50px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
             text-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
         }
 
-        header h1.visible {
-            opacity: 1;
-            transform: translateY(0);
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav a {
+            color: #00ffcc;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: 1px solid #00ffcc;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s, transform 0.2s ease-in-out;
+        }
+
+        header nav a:hover {
+            background: #00ffcc;
+            color: #000;
+        }
+
+        header nav a:active {
+            transform: scale(0.95);
         }
 
         .welcome {
@@ -130,7 +150,7 @@
             position: relative;
             opacity: 0;
             transform: translateY(50px);
-            text-decoration: none; /* Remove underline from links */
+            text-decoration: none;
         }
 
         .project.visible {
@@ -164,7 +184,6 @@
             position: relative;
             display: inline-block;
             transition: color 0.3s;
-            text-decoration: none; /* Remove underline from titles */
         }
 
         .project h3::after {
@@ -222,28 +241,31 @@
             color: #ccc;
         }
 
-        .contact a, .contact button {
+        .contact a,
+        .contact button {
             color: #00ffcc;
             text-decoration: none;
             font-weight: 500;
             border: 1px solid #00ffcc;
             padding: 10px 20px;
             border-radius: 4px;
-            transition: background 0.3s, color 0.3s;
+            transition: background 0.3s, color 0.3s, transform 0.2s ease-in-out;
             display: inline-block;
             margin: 10px;
             cursor: pointer;
-            background: transparent; /* Ensure the background is transparent */
-            font-size: 1.2em; /* Font size for consistency */
+            background: transparent;
+            font-size: 1.2em;
         }
 
-        .contact a:hover, .contact button:hover {
+        .contact a:hover,
+        .contact button:hover {
             background: #00ffcc;
             color: #000;
         }
 
-        .contact button {
-            font-size: 1.2em; /* Ensure the button text size is the same */
+        .contact a:active,
+        .contact button:active {
+            transform: scale(0.95);
         }
 
         .contact .social-icons {
@@ -254,11 +276,15 @@
             color: #00ffcc;
             margin: 0 15px;
             font-size: 2em;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.2s ease-in-out;
         }
 
         .contact .social-icons a:hover {
             color: #fff;
+        }
+
+        .contact .social-icons a:active {
+            transform: scale(0.95);
         }
 
         footer {
@@ -277,15 +303,10 @@
             transform: translateY(0);
         }
 
-        footer p {
-            margin: 0;
-            font-size: 0.9em;
-        }
-
         .popup {
             display: none;
             position: fixed;
-            bottom: 20px;
+            top: 20px;
             right: 20px;
             background: rgba(0, 0, 0, 0.7);
             color: #00ffcc;
@@ -302,18 +323,23 @@
         }
     </style>
 </head>
-<body>
 
+<body>
     <header>
         <h1>Rarafaza5</h1>
+        <nav>
+            <a href="#projects">Projetos</a>
+            <a href="#contact">Contato</a>
+            <a href="https://github.com/Rarafaza5"><i class="fab fa-github"></i> GitHub</a>
+        </nav>
     </header>
 
-    <section class="welcome">
-        <h2>Bem-vindo ao Meu Portfólio</h2>
-        <p>Neste website podes aceder a todos os meus projetos</p>
+    <section id="home" class="welcome">
+        <h2>Olá!👋</h2>
+        <p>Eu sou o Rarafaza5</p>
     </section>
 
-    <div class="container">
+    <div id="projects" class="container">
         <section class="intro">
             <h2>Projetos:</h2>
             <p>Vê os projetos. :)</p>
@@ -328,7 +354,7 @@
         </section>
     </div>
 
-    <section class="contact">
+    <section id="contact" class="contact">
         <h2>Entre em Contato</h2>
         <p>Discord: <button id="copyButton">Rarafaza5</button></p>
         <div class="social-icons">
@@ -364,7 +390,10 @@
 
         // Copiar para o clipboard e popup
         let copyCount = 0;
-        const maxCopyCount = 5;
+        const maxCopyCount = 3;
+        const felizCopyCount = 5;
+        const ipercopia = 7;
+        const continente = 10;
 
         document.getElementById('copyButton').addEventListener('click', () => {
             const text = 'Rarafaza5';
@@ -372,8 +401,14 @@
                 copyCount++;
                 const popup = document.getElementById('popup');
 
-                if (copyCount >= maxCopyCount) {
+                if (copyCount >= maxCopyCount && copyCount < felizCopyCount) {
                     popup.textContent = 'SUPER COPIADO!';
+                } else if (copyCount === felizCopyCount) {
+                    popup.textContent = 'ULTRA COPIADO!!!';
+                } else if (copyCount == ipercopia) {
+                    popup.textContent = 'HIPER COPIADO!!!!!'
+                } else if (copyCount >= continente) {
+                    popup.textContent = 'A MAIOR COPIA DO UNIVERSO!!!!!!!!!'
                 } else {
                     popup.textContent = 'Texto copiado para o clipboard!';
                 }
@@ -384,7 +419,18 @@
                 }, 2000);
             }).catch(err => console.error('Erro ao copiar para o clipboard: ', err));
         });
+
+        // Adicionando animação de clique
+        const navLinks = document.querySelectorAll('header nav a, .contact a, .contact button');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                link.classList.add('clicked');
+                setTimeout(() => link.classList.remove('clicked'), 300);
+            });
+        });
     </script>
 
 </body>
+
 </html>
